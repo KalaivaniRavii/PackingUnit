@@ -12,7 +12,7 @@
                         <FlexItemData growFactor="1" />
                     </layoutData>
                     </Button>
-                    <Button text="Clear" press="cleatdata"  class="sapUiLargeMarginBeginEnd"/>
+                    <Button text="Clear21" press="cleatdata"  class="sapUiLargeMarginBeginEnd"/>
                 </HBox>
                 <Table id="Packing1" class="sapUiResponsiveMargin" inset="true" width="auto" items="{SFCDataModel>/items}" mode="MultiSelect">
                     <columns>
