@@ -1,0 +1,15 @@
+{
+	"components": [
+		{
+			"id": "PackingUnit",
+			"type": "VIEW_PLUGIN",
+			"allowMultipleInstances": false,
+			"name": "shoubii.custom.plugins.PackingUnit.PackingUnit",
+			"propertyEditor": "shoubii.custom.plugins.PackingUnit.PackingUnit.builder.PropertyEditor",
+			"i18n": "shoubii.custom.plugins.PackingUnit.PackingUnit.i18n.i18n",
+            "productionProcessEnabled": true,
+           "productionProcessTitle": "PackingUnit",
+			"supportedPodTypes": ["WORK_CENTER","OPERATION","ORDER"]
+		}   
+	]
+}

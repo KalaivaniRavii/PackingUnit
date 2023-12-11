@@ -1,0 +1,75 @@
+ 
+ <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="HU Details" >
+		<subHeader>
+			<Toolbar>
+			</Toolbar>
+		</subHeader>
+		<CustomListItem>
+			<Table id="HUlist" inset="true" items="{SFCModel>/items}" width="auto">
+				<columns>
+					<Column hAlign="Center" width="auto">
+						<Text text="{i18n>Pallet ID}"/>
+					</Column>
+					<Column hAlign="Center" width="auto">
+						<Text text="{i18n>Packing Material}"/>
+					</Column>
+					<Column hAlign="Center" width="auto">
+						<Text text="{i18n>SFC}"/>
+					</Column>
+					<Column hAlign="Center" width="auto">
+						<Text text="{i18n>Quantity}"/>
+					</Column>
+					<Column hAlign="Center" width="auto">
+						<Text text="{i18n>UOM}"/>
+					</Column>
+					<!--<Column hAlign="Center" minScreenWidth="Small" width="auto" demandPopin="true">
+						<Text text="{i18n>Packing Material Description}"/>
+					</Column> -->
+					<!-- <Column hAlign="Center" minScreenWidth="Small" demandPopin="true" width="auto">
+						<Text text="{i18n>Contents}"/>
+					</Column> -->
+					<!-- <Column hAlign="Center" width="auto">
+						<Text text="{i18n>Carrier ID}"/>
+					</Column> -->
+					<!-- <Column hAlign="Center" minScreenWidth="Small" demandPopin="true" width="auto">
+						<Text text="{i18n>Package Type}"/>
+					</Column> -->
+					<!-- <Column hAlign="Center" minScreenWidth="Small" demandPopin="true" width="auto">
+						<Text text="{i18n>Status}"/>
+					</Column> -->
+					<!-- <Column hAlign="Center" width="auto">
+						<Text text="{i18n>Modified Date/Time}"/>
+					</Column> -->
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="{SFCModel>number}" width="auto"/>
+                            <Text text="{SFCModel>material}"/>
+                            <Text text="{SFCModel>sfc}"/>
+                            <Text text="{SFCModel>quantity}"/>
+                            <!-- <Text text=""/>
+                            <Text text=""/> -->
+                            <Text text="{SFCModel>unitOfMeasure}"/>
+                            <!-- <Text text="{HUModel>modifiedDateTime}"/>
+							<Text text="{ path: 'HUModel>modifiedDateTime', type: 'sap.ui.model.type.DateTime', formatOptions: { style: 'medium', source: { pattern: 'MMM dd, yyyy HH:mm:ss' } } }" /> -->
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</CustomListItem>
+		<beginButton>
+			
+			
+		</beginButton>
+		<!--  <endButton>-->
+		<!--  <Button text="Cancel" press="onCancelPress" />-->
+		<!--  <Button text="Save" press="onSavePress" />-->
+		<!--</endButton>-->
+		<buttons>
+		<Button text="{i18n>Close}" press=".onSubmit"/>
+	    <Button text="{i18n>Unpack}" press="UnPackingunitsforHU"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

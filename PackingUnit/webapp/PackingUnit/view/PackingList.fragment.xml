@@ -1,0 +1,69 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="HU List Against The Order" >
+		<subHeader>
+			<Toolbar>
+				<SearchField width="20%" placeholder="Search HU Number" liveChange=".onFilterHUnumber"/>
+			</Toolbar>
+		</subHeader>
+		<CustomListItem>
+			<Table id="UnPacking" inset="true" items="{HUModel>/items}" mode="SingleSelectLeft" width="auto">
+				<columns>
+					<Column hAlign="Center" width="auto">
+						<Text text="{i18n>Pallet ID}"/>
+					</Column>
+					<Column hAlign="Center" width="auto">
+						<Text text="{i18n>Packing Material}"/>
+					</Column>
+					<Column hAlign="Center" minScreenWidth="Small" width="auto" demandPopin="true">
+						<Text text="{i18n>Packing Material Description}"/>
+					</Column>
+					<Column hAlign="Center" minScreenWidth="Small" demandPopin="true" width="auto">
+						<Text text="{i18n>No of SFC}"/>
+					</Column>
+					<!-- <Column hAlign="Center" width="auto">
+						<Text text="{i18n>Carrier ID}"/>
+					</Column> -->
+					<!-- <Column hAlign="Center" minScreenWidth="Small" demandPopin="true" width="auto">
+						<Text text="{i18n>Package Type}"/>
+					</Column> -->
+					<Column hAlign="Center" minScreenWidth="Small" demandPopin="true" width="auto">
+						<Text text="{i18n>Status}"/>
+					</Column>
+					<Column hAlign="Center" width="auto">
+						<Text text="{i18n>Modified Date/Time}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="{HUModel>number}" width="auto"/>
+							<Text text="{HUModel>material}"/>
+							<Text text="{HUModel>materialDescription}"/>
+							<Text text="{HUModel>contentQuantity}"/>
+							<!-- <Text text="{HUModel>carrierNumber}"/> -->
+							<!-- <Text text="{HUModel>packingType}"/> -->
+							<!-- <Text text="{HUModel>status}"/> -->
+							<ObjectStatus text="{HUModel>status}" state="{ path: 'HUModel>status', formatter: '.formatter.Status' }"/>
+							<Text text="{HUModel>modifiedCONDateTime}"/>
+							<Text text="{ path: 'HUModel>modifiedDateTime', type: 'sap.ui.model.type.DateTime', formatOptions: { style: 'medium', source: { pattern: 'MMM dd, yyyy' } } }" />
+
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</CustomListItem>
+		<beginButton>
+			
+			
+		</beginButton>
+		<!--  <endButton>-->
+		<!--  <Button text="Cancel" press="onCancelPress" />-->
+		<!--  <Button text="Save" press="onSavePress" />-->
+		<!--</endButton>-->
+		<buttons>
+		<Button text="{i18n>UnPack}" press="UnPackingunits"/>
+		<Button text="{i18n>Pallet ID Details}" press="OnHUlist"/>
+		<Button text="{i18n>Close}" press=".onCloseDialog"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

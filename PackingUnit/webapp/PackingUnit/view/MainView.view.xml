@@ -1,0 +1,72 @@
+<mvc:View controllerName="shoubii.custom.plugins.PackingUnit.PackingUnit.controller.MainView" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+     xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+    <App id="app">
+        <pages>
+            <Page>
+            
+                <HBox class="customHBox">
+                    <Label text="Production Order" labelFor="Order" class="sapUiTinyMargin"/>
+                    <Input id="id_Order" placeholder="" width="100%" change="getOrderdetails"/>
+                    <Button text="Display SFC" press="newfunctio"  class="sapUiLargeMarginBeginEnd">
+                    <layoutData>
+                        <FlexItemData growFactor="1" />
+                    </layoutData>
+                    </Button>
+                    <Button text="Clear" press="cleatdata"  class="sapUiLargeMarginBeginEnd"/>
+                </HBox>
+                <Table id="Packing1" class="sapUiResponsiveMargin" inset="true" width="auto" items="{SFCDataModel>/items}" mode="MultiSelect">
+                    <columns>
+                        <Column hAlign="Center" minScreenWidth="Small" width="12rem" demandPopin="true">
+                            <Text text="{i18n>SFC}"/>
+                        </Column>
+                        <Column hAlign="Center" width="12rem">
+                            <Text text="{i18n>Material}"/>
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="Small" width="18rem" demandPopin="true">
+                            <Text text="{i18n>Material Description}"/>
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="Small" width="8rem" demandPopin="true">
+                            <Text text="{i18n>Qty} and {i18n>Base UOM}"/>
+                        </Column>
+                     
+                        <Column hAlign="Center" minScreenWidth="Small" width="8rem" demandPopin="true">
+                            <Text text="{i18n>Actual Wt.}"/>
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="Small" width="7rem" demandPopin="true">
+                            <Text text="{i18n>parallel UOM}"/>
+                        </Column>
+                        <Column hAlign="Center" width="5rem">
+                            <Text text="{i18n>Pack Qty}" />
+                        </Column>
+                        <!--<Column hAlign="Center">-->
+                        <!--    <Text text="{i18n>Pack Qty UOM}"/>-->
+                        <!--</Column>-->
+                    </columns>
+                    <items>
+                        <ColumnListItem vAlign="Middle">
+                            <cells>
+                                <Text text="{SFCDataModel>sfc}"/>
+                                    <Text text="{SFCDataModel>material}"/>
+                                    <Text text="{SFCDataModel>materialDescription}"/>
+                                     <Text text="{SFCDataModel>quantity}  {SFCDataModel>shopOrderERPUnitOfMeasure}"/>                                 
+                                    <Input textAlign="Center" width="50%" value="{SFCDataModel>availableQuantity}" change="checkpackquantity"/>
+                                    <Text text="{SFCDataModel>shopOrderERPUnitOfMeasure}"/>
+                                    <Text text="{SFCDataModel>packedQuantity}"/>                                  
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+                <footer>
+                    <OverflowToolbar>
+                        <ToolbarSpacer/>
+                         <Button  press="getUnusedHUlist" text="Pack with already created Pallet ID"/>
+                         <Button  press="CreateandConfrimPallet" text="Create and confirm Pallet ID"/>
+                        <Button  press="getHUlist" text="Unpack"/>
+                        <Button  press="onReprint" text="Print Pallet ID"/>
+                        <Button press="onLastReprint" text="Reprint last Pallet ID"/>
+                    </OverflowToolbar>
+                </footer>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

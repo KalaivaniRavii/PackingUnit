@@ -1,0 +1,23 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <SelectDialog
+        id="valueHelpDialog"
+        noDataText="No SFC Found"
+        title="Re-Print Pallet ID"
+        items="{HUFragModel>/items}"
+        growing="true"
+        growingThreshold="10"
+        liveChange="_handleValueHelpSearch"
+        confirm="_handleValueHelpConfirm"
+        cancel="onCloseDialog1"
+        multiSelect="false">
+        <StandardListItem
+            icon="sap-icon://print"
+            iconDensityAware="false"
+            iconInset="false"
+            title="{HUFragModel>number}"
+            description="{HUFragModel>contentQuantity}" 
+            info=""/>
+    </SelectDialog>
+</core:FragmentDefinition>
